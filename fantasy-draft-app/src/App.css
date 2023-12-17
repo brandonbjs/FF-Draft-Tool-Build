@@ -1,0 +1,184 @@
+/* ================ General styling for the entire page ================ */
+.App {
+  text-align: center;
+
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(160, 160, 162);
+}
+
+/* ================ All draftBoard Styling goes here ================ */
+.draftBoard {
+  height: 55%;
+  width: 100%;
+  padding: 3px;
+  /* Right border was requiring a horizontal scroll bar to view, 
+  this keeps border within visible view */
+  box-sizing: border-box; 
+}
+
+.buttonWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.startDraftButton {
+  background-color: rgba(25, 25, 110, 0.973);
+  color: rgb(238, 222, 222);
+  border: 2px solid rgb(238, 222, 222);
+  border-radius: 20px; /* Adjust the border radius to control the roundness */
+  padding: 10px 20px;
+  font-size: 1vw;
+  cursor: pointer;
+  margin-bottom: 0.5vh;
+}
+
+.resetDraftButton {
+  background-color: red;
+  color: black;
+  border: 3px solid black;
+  border-radius: 20px; /* Adjust the border radius to control the roundness */
+  padding: 10px 20px;
+  font-size: 1vw;
+  cursor: pointer;
+  position: absolute;
+  top: 0; /* Align to the top */
+  right: 0; /* Align to the right */
+  margin: 5px; /* Add some margin for better spacing */
+  
+}
+
+.countdownDiv {
+  font-size: 2vw;
+}
+
+.teamsGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1px;
+  margin-top: 0.5vh;
+  margin-bottom: 0.7vh;
+}
+
+/* Styling to account for smaller screens */
+@media screen and (max-width: 600px) {
+  .teamsGrid {
+    grid-template-rows: repeat(2, 15vh); 
+  }
+}
+
+.team {
+  border: 1px solid black;
+  text-align: left;
+  font-size: 1.2em; 
+}
+
+.playerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playerList li {
+  margin-bottom: 2px;
+}
+
+h4 {
+  margin: 1vh;
+  text-align: center;
+}
+
+
+
+/* =================================================================== */
+
+
+
+
+/* ================ All Container Styling goes here ================ */
+.container {
+  display: flex; /* using Flexbox for our dual panels below the Draft Board */
+  height: 100%;
+}
+/* =================================================================== */
+
+
+
+
+/* ================ All AvailablePlayerList Styling goes here ================ */
+.availablePlayerList {
+  flex: 1;
+  border: 2px solid #FFB612;
+  box-sizing: border-box; 
+}
+
+.search-bar {
+  background-color: #101820;
+}
+
+input {
+  width: 33%;
+}
+/* =================================================================== */
+
+
+
+
+
+/* ================ All teamManagement Styling goes here ================ */
+.teamManagement {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Add this to make the table cells distribute width evenly */
+}
+
+.grid-header,
+.grid-row {
+  display: table-row;
+}
+
+.grid-column {
+  display: table-cell;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.grid-header {
+  font-weight: bold;
+}
+
+.grid-body {
+  display: table-row-group;
+}
+
+.grid-body .grid-row {
+  display: table-row;
+}
+
+.grid-body .grid-row .grid-column {
+  display: table-cell;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.grid-column:last-child {
+  border-right: none;
+}
+
+
+
+/* =================================================================== */
