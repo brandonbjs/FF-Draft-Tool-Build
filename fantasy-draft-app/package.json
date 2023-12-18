@@ -1,7 +1,7 @@
 {
   "name": "fantasy-draft-app",
   "version": "0.1.0",
-  "homepage": "https://brandonbjs.github.io/FF-Draft-Tool-Build",
+  "homepage": "https://brandonbjs.github.io/FFDT-gh-pages",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/brandonbjs/FF-Draft-Tool-Build"
+    "deploy": "gh-pages -d build -r https://github.com/brandonbjs/FFDT-gh-pages"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +43,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.1.0"
   }
 }
