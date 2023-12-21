@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
-const serverName = "127.0.0.1";
-
-const databaseName = "Fantasy_Draft"
-
-const URL = `mongodb://${serverName}:27017/${databaseName}`;
+const URL = `mongodb+srv://bjs397:rmRRXVGUU2uxWNgj@ffdt-cluster.yzvshdi.mongodb.net/?retryWrites=true&w=majority`;
 
 class Database{
     constructor(){

@@ -8,14 +8,15 @@
     "start": "node DraftToolAPI.js"
   },
   "engines": {
-    "node": "18.17.0"  
-  },  
+    "node": "18.17.0"
+  },
   "git repository": "https://github.com/brandonbjs/FF-Draft-Tool-Build",
   "author": "Drew Heller & Brandon J Shaffer",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "mongodb": "^6.3.0",
     "mongoose": "^7.4.1"
   }
 }
