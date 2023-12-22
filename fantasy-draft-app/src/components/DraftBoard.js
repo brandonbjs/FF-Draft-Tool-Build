@@ -46,7 +46,7 @@ class DraftBoard extends Component {
   // which is a PUT method that alters the status and manager
   // fields of every player in our mongoDB.
   handleResetDraft = () => {
-    const apiUrl = 'http://localhost:1234/resetPlayers' 
+    const apiUrl = 'https://ffdt.ddns.net:1234/resetPlayers' 
 
     fetch(apiUrl, {
       method: 'PUT', // Using PUT method to update the players
