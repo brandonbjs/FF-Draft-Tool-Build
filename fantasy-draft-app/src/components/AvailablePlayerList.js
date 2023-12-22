@@ -7,7 +7,7 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
   const [searchText, setSearchText] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:1234/fetchPlayers/')
+    fetch('http://54.193.20.13:1234/fetchPlayers/')
       .then((res) => res.json())
       .then((data) => {
         const playersData = data.map((player) => ({
@@ -150,7 +150,7 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
 
         // now that we have updated the teams state array, lets make the change in the DB
         // here we invoke our updatePlayer endpoint.
-        const apiUrl = 'http://localhost:1234/updatePlayer' 
+        const apiUrl = 'http://54.193.20.13:1234/updatePlayer' 
 
         const requestData = {
           id: playerId, // playerId as id in the body
@@ -166,7 +166,7 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
         .then(res=>res.json())
         .then(json => {
           console.log(json);
-          fetch('http://localhost:1234/fetchPlayers/')
+          fetch('http://54.193.20.13:1234/fetchPlayers/')
           .then((res) => res.json())
           .then((data) => {
             const playersData = data.map((player) => ({
