@@ -3,8 +3,6 @@ import cors from "cors";
 import "./connect.js";
 import { addPlayer, fetchPlayers, fetchTeam, findPlayerById, updatePlayer, deletePlayer, resetPlayers } from "./Services/DraftToolService.js";
 
-const express = require('express');
-const cors = require('cors');
 const app = express(); 
 
 app.use(express.json());
