@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(cors({
     origin: '*',
   }));
+app.options('*', cors());
   
 
 //C - addPlayerEndpoint
