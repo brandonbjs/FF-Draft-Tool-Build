@@ -6,7 +6,10 @@ import { addPlayer, fetchPlayers, fetchTeam, findPlayerById, updatePlayer, delet
 const app = express(); 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: '*',
+  }));
+  
 
 //C - addPlayerEndpoint
 //API method: POST
