@@ -7,7 +7,7 @@ function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
   for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+    color += letters[Math.floor(Math.random() * 16)]
   }
   return color;
 }
@@ -22,8 +22,8 @@ class DraftBoard extends Component {
     const teamColors = {};
     // Generate random colors for each team and store them in the state
     props.teams.forEach((team) => {
-      teamColors[team.id] = getRandomColor();
-    });
+      teamColors[team.id] = getRandomColor()
+    })
   
     this.state = {
        teamColors,
@@ -35,7 +35,7 @@ class DraftBoard extends Component {
   // This invokes the handleNameChange() method that we passed as a prop
   // from App.js. 
   handleTeamNameClick = (teamId) => {
-    const newName = prompt("Enter new team name:");
+    const newName = prompt("Enter new team name:")
     if (newName !== null) {
     this.props.handleNameChange(teamId, newName)
     }
@@ -45,18 +45,24 @@ class DraftBoard extends Component {
   // This function invokes our resetPlayers endpoint
   // which is a PUT method that alters the status and manager
   // fields of every player in our mongoDB.
-  handleResetDraft = () => {
-    window.location.reload()
-    const apiUrl = 'https://ffdt.ddns.net:443/resetPlayers' 
+  handleResetDraft = async () => {
+    try {
+      const apiUrl = 'https://ffdt.ddns.net:443/resetPlayers'
 
-    fetch(apiUrl, {
-      method: 'PUT', // Using PUT method to update the players
-      headers: {'Content-Type': 'application/json',}
-    })
-    .then(res=>res.json())
-    .then(json => console.log(json))
-    // force a reload webpage on button press
-    window.location.reload()
+      const response = await fetch(apiUrl, {
+        method: 'PUT', 
+        headers: {'Content-Type': 'application/json',}
+      })
+
+      if (response.ok) {
+        // Reset request succeeded, reload page now
+        window.location.reload();
+      } else {
+        console.error('Reset request failed with status:', response.status)
+      }
+    } catch (error) {
+      console.error('An error occurred:', error)
+    }
   }
 
   render() {
