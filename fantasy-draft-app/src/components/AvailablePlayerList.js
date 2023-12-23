@@ -196,27 +196,27 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
   const columns = [
     {
       name: 'ADP',
-      selector: 'adp',
+      selector: row => row.adp,
       sortable: true,
     },
     {
       name: 'Name',
-      selector: 'name',
+      selector: row => row.name,
       sortable: true,
     },
     {
       name: 'Position',
-      selector: 'position',
+      selector: row => row.position,
       sortable: true,
     },
     {
       name: 'Team',
-      selector: 'team',
+      selector: row => row.team,
       sortable: true,
     },
     {
       name: 'Bye',
-      selector: 'bye',
+      selector: row => row.bye,
       sortable: true,
     },
     {
