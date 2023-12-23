@@ -1,15 +1,24 @@
 import express from "express"; 
 import cors from "cors";
+import https from 'https';
+import fs from 'fs';
+import path from 'path';
 import "./connect.js";
 import { addPlayer, fetchPlayers, fetchTeam, findPlayerById, updatePlayer, deletePlayer, resetPlayers } from "./Services/DraftToolService.js";
 
 const app = express(); 
-
 app.use(express.json());
-app.use(cors({
-    origin: '*',
-  }));
-app.options('*', cors());
+app.use(cors());
+
+// SSL cert paths
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/ffdt.ddns.net/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/ffdt.ddns.net/fullchain.pem', 'utf8');
+const credentials = { key: privateKey, cert: certificate };
+
+// Create HTTPS server
+https.createServer(credentials, app).listen(443, () => {
+    console.log('Express server listening on port 443');
+});
   
 
 //C - addPlayerEndpoint
