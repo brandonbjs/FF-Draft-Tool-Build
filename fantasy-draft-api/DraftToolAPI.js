@@ -16,8 +16,8 @@ const certificate = fs.readFileSync('/home/ec2-user/certificates/fullchain.pem',
 const credentials = { key: privateKey, cert: certificate };
 
 // Create HTTPS server
-https.createServer(credentials, app).listen(1234, () => {
-    console.log('Express server listening on port 1234');
+https.createServer(credentials, app).listen(443, () => {
+    console.log('Express server listening on port 443');
 });
   
 
