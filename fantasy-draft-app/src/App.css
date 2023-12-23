@@ -61,7 +61,7 @@ html, body {
 .teamsGrid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1px;
   margin-top: 0.5vh;
   margin-bottom: 0.7vh;
@@ -70,7 +70,7 @@ html, body {
 /* Styling to account for smaller screens */
 @media screen and (max-width: 600px) {
   .teamsGrid {
-    grid-template-rows: repeat(2, 15vh); 
+    grid-template-rows: repeat(5, 2vh); 
   }
 }
 
