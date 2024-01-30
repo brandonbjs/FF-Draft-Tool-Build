@@ -47,7 +47,7 @@ class DraftBoard extends Component {
   // fields of every player in our mongoDB.
   handleResetDraft = async () => {
     try {
-      const apiUrl = 'https://ffdt.ddns.net:443/resetPlayers'
+      const apiUrl = 'https://ffdt.ddnsking.com:443/resetPlayers'
 
       const response = await fetch(apiUrl, {
         method: 'PUT', 
