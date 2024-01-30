@@ -7,7 +7,7 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
   const [searchText, setSearchText] = useState('')
 
   useEffect(() => {
-    fetch('https://ffdt.ddnsking.com:443/fetchPlayers/')
+    fetch('https://ffdt.ddns.net:443/fetchPlayers/')
       .then((res) => res.json())
       .then((data) => {
         const playersData = data.map((player) => ({
@@ -150,7 +150,7 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
 
         // now that we have updated the teams state array, lets make the change in the DB
         // here we invoke our updatePlayer endpoint.
-        const apiUrl = 'https://ffdt.ddnsking.com:443/updatePlayer' 
+        const apiUrl = 'https://ffdt.ddns.net:443/updatePlayer' 
 
         const requestData = {
           id: playerId, // playerId as id in the body
@@ -166,7 +166,7 @@ const AvailablePlayerList = ({ pickingId, teams, draftStarted, roundNum, updateP
         .then(res=>res.json())
         .then(json => {
           console.log(json);
-          fetch('https://ffdt.ddnsking.com:443/fetchPlayers/')
+          fetch('https://ffdt.ddns.net:443/fetchPlayers/')
           .then((res) => res.json())
           .then((data) => {
             const playersData = data.map((player) => ({

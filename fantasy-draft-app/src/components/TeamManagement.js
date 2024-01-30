@@ -33,7 +33,7 @@ class TeamManagement extends Component {
     const selectedTeamId = event.target.value;
     this.setState({ selectedTeamId })
   
-    const apiUrl = `https://ffdt.ddnsking.com:443/fetchTeam/?manager=${selectedTeamId}`
+    const apiUrl = `https://ffdt.ddns.net:443/fetchTeam/?manager=${selectedTeamId}`
   
     fetch(apiUrl, {
       method: 'GET',
