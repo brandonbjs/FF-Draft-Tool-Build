@@ -1,6 +1,6 @@
 //all services related to players
 
-import { PlayerModel } from "../Models/PlayerModel.js";
+import { PlayerModel } from '../Models/PlayerModel.js'
 
 // addPlayer service function that accepts adp, name, position, team
 // and bye as parameters and creates a new PlayerModel object
@@ -17,24 +17,24 @@ const addPlayer = async (adp, name, position, team, bye) => {
     })
     const result = await playerDoc.save()
     return result
-};
+}
 
 // This is our fetchPlayers service function that is invoked
 // by the fetchPlayersEndpoint() function. It uses the mongoDB
-// find() method to find all players with a status of true. 
+// find() method to find all players with a status of true.
 // The only time a player status is not true is after the player
 // has been successfully added to a Fantasy Team, therefore this
 // should only show available players!
 const fetchPlayers = async () => {
-    const availablePlayers = await PlayerModel.find({status: true})
+    const availablePlayers = await PlayerModel.find({ status: true })
     return availablePlayers
 }
 
 // This is our fetchTeam() service function that is invoked by
 // the fetchTeamEndpoint() function. It uses the mongoDB
-// find() method to find all players with a specfic manager id. 
+// find() method to find all players with a specfic manager id.
 const fetchTeam = async (manager) => {
-    const team = await PlayerModel.find({manager: manager})
+    const team = await PlayerModel.find({ manager: manager })
     return team
 }
 
@@ -45,7 +45,7 @@ const findPlayerById = async (id) => {
     return player
 }
 
-// this is our updatePlayers() service function that is 
+// this is our updatePlayers() service function that is
 // invoked by the updatePlayerEndpoint() function. It accepts
 // three parameters and finds the correct player in our mongoDB
 // using findById(). It then sets the fields to the parameters
@@ -57,9 +57,9 @@ const updatePlayer = async (id, manager, draftedRound) => {
     player.draftedRound = draftedRound
     await player.save()
     return player
-};
+}
 
-// this is our deletePlayer() service function that is 
+// this is our deletePlayer() service function that is
 // invoked by the deletePlayerEndpoint() function. It accepts
 // one parameter and finds the correct player to delete
 // in our mongoDB using the built in findByIdAndDelete method.
@@ -74,8 +74,19 @@ const deletePlayer = async (id) => {
 // the status fields to true. This is invoked when the user wants
 // to completely reset the draft and erase any progress made.
 const resetPlayers = async () => {
-    const freshPlayerList = await PlayerModel.updateMany({}, {$set: {manager: null, status: true}})
+    const freshPlayerList = await PlayerModel.updateMany(
+        {},
+        { $set: { manager: null, status: true } }
+    )
     return freshPlayerList
 }
 
-export { addPlayer, fetchPlayers, fetchTeam, findPlayerById, updatePlayer, deletePlayer, resetPlayers }
+export {
+    addPlayer,
+    fetchPlayers,
+    fetchTeam,
+    findPlayerById,
+    updatePlayer,
+    deletePlayer,
+    resetPlayers,
+}

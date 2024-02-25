@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const PlayerSchema = mongoose.Schema({
     adp: {
@@ -11,7 +11,7 @@ const PlayerSchema = mongoose.Schema({
         type: String,
     },
     team: {
-        type: String, 
+        type: String,
     },
     bye: {
         type: Number,
@@ -24,9 +24,9 @@ const PlayerSchema = mongoose.Schema({
     },
     status: {
         type: Boolean,
-    }
-});
+    },
+})
 
-const PlayerModel = mongoose.model("players", PlayerSchema)
+const PlayerModel = mongoose.model('players', PlayerSchema)
 
-export { PlayerModel };
+export { PlayerModel }
