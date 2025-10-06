@@ -38,19 +38,48 @@ The webpage will enable a virtually hosted draft, mimicking the traditional phys
 * TeamManagement.js: This component will act as a way for the draft host to manually interact with individual teams. As the draft goes on, the draft host should be able to switch between teams and view their current roster, as well as execute updates on the selected team such as adding a new player.
 
 #### Functions To be Used
-* fetchPlayersEndpoint();
-* fetchPlayers();
-* updatePlayerEndpoint();
-* updatePlayer();
-* addPlayerEndpoint();
-* addPlayer();
-* deletePlayerEndpoint();
-* hardDeletePlayer();
-* findPlayerByID();
-* componentDidMount();
-* componentDidUpdate();
-* handleChange();
-* handleSubmit();
+* App.js
+  * updatePickingId();
+  * updateCountdown();
+  * resetCountdown();
+  * startDraft();
+  * componentDidUpdate();
+  * handleStartDraft();
+  * handleNameChange();
+
+* AvailablePlayerList.js
+  * handleAddPlayerToTeam();
+ 
+* DraftBoard.js
+  * getRandomColor();
+  * handleTeamNameClick();
+  * handleResetDraft();
+
+* TeamManagement.js
+  * sortPlayersByPosition();
+  * handleTeamSelect();
+
+* DraftToolAPI.js
+  * addPlayerEndpoint();
+  * fetchPlayersEndpoint();
+  * fetchTeamEndpoint();
+  * updatePlayerEndpoint();
+  * deletePlayerEndpoint();
+  * resetPlayersEndpoint();
+
+* DraftToolService.js
+  * addPlayer();
+  * fetchPlayers();
+  * fetchTeam();
+  * findPlayerById();
+  * updatePlayer();
+  * deletePlayer();
+  * resetPlayers();
+ 
+* TeamManagement.js
+  * sortPlayersByPosition();
+  * handleTeamSelect();
+
 
 #### Endpoints to be Used:
 * "/fetchPlayers"
