@@ -77,5 +77,20 @@ migrated for two key reasons:
 ```bash
    npm install
 ```
-3. Add a `.env` file to `/fantasy-draft-api`:
-4. 
+3. Add a `.env` file to `/fantasy-draft-api`: MONGO_URI=your_mongodb_atlas_connection_string
+PORT=5000
+4. Start the API:
+```bash
+   cd fantasy-draft-api && npm run start
+```
+5. Start the frontend in a separate terminal:
+```bash
+   cd fantasy-draft-app && npm run start
+```
+
+---
+
+## Original Course Context
+This project was originally developed for CS312 — Web Programming II at 
+Northern Arizona University. The original version used a static ADP dataset 
+manually uploaded to MongoDB and was hosted on Amazon EC2.
